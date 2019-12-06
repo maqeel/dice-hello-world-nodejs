@@ -14,6 +14,7 @@ pipeline {
 			steps {
 				sh 'docker container rm -f node || true'
 				sh 'docker container run -p 8001:8080 --name node -d aqeel4mpak/test-node-app'
+				sh 'sleep 30'
 				sh 'curl -I http://localhost:8001'
 			}
 		}
